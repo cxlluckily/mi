@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--with 必须设置整数，对应Excel中的列宽，如果列宽是小数的话，建议四射五入-->
+<settings>
+
+    <setting ID="qrCodeListExport">
+        <title>二维码导出</title>
+        <description>二维码导出数据</description>
+        <sheets>
+            <sheet name="二维码数据" totalKey="isTotal" totalColSpan="5">
+                <headers>
+                    <header>
+                        <column key="qrCode" display="二维码号码" width="30"/>
+                        <column key="categoryName" display="备件类型" width="20"/>
+                        <column key="partName" display="备件名称" width="30"/>
+                        <column key="materiaCoding" display="物资编码" width="30"/>
+                        <column key="specificationModel" display="规格型号" width="30"/>
+                        <column key="statusText" display="状态" width="30"/>
+
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+
+    <setting ID="operationsListExport">
+        <title>线上设备导出</title>
+        <description>线上设备导出数据</description>
+        <sheets>
+            <sheet name="线上设备数据" totalKey="isTotal" totalColSpan="9">
+                <headers>
+                    <header>
+                        <column key="lineName" display="线路" width="20"/>
+                        <column key="stationName" display="站点" width="30"/>
+                        <column key="categoryName" display="设备类型" width="30"/>
+                        <column key="partName" display="备件名称" width="30"/>
+                        <column key="equipmentName" display="设备名称" width="30"/>
+                        <column key="equipmentNo" display="设备编号" width="30"/>
+                        <column key="statusText" display="状态" width="30"/>
+                        <column key="location" display="所在位置" width="20"/>
+                        <column key="brand" display="品牌" width="30"/>
+                        <column key="specificationModel" display="规格型号" width="30"/>
+
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+
+    <setting ID="shelfListExport">
+        <title>货架导出数据</title>
+        <description>货架导出数据</description>
+        <sheets>
+            <sheet name="货架数据" totalKey="isTotal" totalColSpan="9">
+                <headers>
+                    <header>
+                        <column key="partName" display="所属仓库名称" width="30"/>
+                        <column key="brand" display="房间号" width="20"/>
+                        <column key="specificationModel" display="类型" width="30"/>
+                        <column key="materiaCoding" display="层数" width="30"/>
+                        <column key="size" display="格数" width="20"/>
+                        <column key="statusText" display="状态" width="30"/>
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+
+    <setting ID="sparePartListExport">
+        <title>备件导出数据</title>
+        <description>备件导出数据</description>
+        <sheets>
+            <sheet name="备件数据" totalKey="isTotal" totalColSpan="9">
+                <headers>
+                    <header>
+                        <column key="partName" display="备件名称" width="30"/>
+                        <column key="categoryName" display="备件类型" width="30"/>
+                        <column key="parentCategoryName" display="父级备件类型" width="30"/>
+                        <column key="brand" display="品牌" width="20"/>
+                        <column key="materiaCoding" display="物资编码" width="30"/>
+                        <column key="specificationModel" display="规格型号" width="30"/>
+                        <column key="material" display="尺寸" width="20"/>
+                        <column key="size" display="材质" width="20"/>
+                        <column key="units" display="单位" width="30"/>
+                        <column key="upperLimit" display="库存上限" width="20"/>
+                        <column key="lowerLimit" display="库存下限" width="20"/>
+                        <column key="statusText" display="状态" width="30"/>
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+
+    <setting ID="sparePartListTypeExport">
+        <title>备件导出数据</title>
+        <description>备件导出数据</description>
+        <sheets>
+            <sheet name="备件数据" totalKey="isTotal" totalColSpan="10">
+                <headers>
+                    <header>
+                        <column key="partName" display="备件名称" width="30"/>
+                        <column key="categoryName" display="备件类型" width="30"/>
+                        <column key="parentCategoryName" display="父级备件类型" width="30"/>
+                        <column key="brand" display="品牌" width="20"/>
+                        <column key="materiaCoding" display="物资编码" width="30"/>
+                        <column key="specificationModel" display="规格型号" width="30"/>
+                        <column key="material" display="尺寸" width="20"/>
+                        <column key="size" display="材质" width="20"/>
+                        <column key="units" display="单位" width="30"/>
+                        <column key="upperLimit" display="库存上限" width="20"/>
+                        <column key="lowerLimit" display="库存下限" width="20"/>
+                        <column key="statusText" display="状态" width="30"/>
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+    <setting ID="stationListExport">
+        <title>车站导出数据</title>
+        <description>车站导出数据</description>
+        <sheets>
+            <sheet name="车站数据" totalKey="isTotal" totalColSpan="6">
+                <headers>
+                    <header>
+                        <column key="lineCode" display="线路编号" width="30"/>
+                        <column key="lineName" display="线路名称" width="20"/>
+                        <column key="stationCode" display="站点编号" width="30"/>
+                        <column key="stationName" display="站点名称" width="20"/>
+                        <column key="headPerson" display="负责人" width="30"/>
+                        <column key="phone" display="电话" width="30"/>
+                        <column key="wasBeginName" display="起始站" width="20"/>
+                        <column key="wasEndName" display="终点站" width="20"/>
+                        <column key="statusText" display="状态" width="30"/>
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+
+    <setting ID="lineStationListExport">
+        <title>车站导出数据</title>
+        <description>车站导出数据</description>
+        <sheets>
+            <sheet name="车站数据" totalKey="isTotal" totalColSpan="6">
+                <headers>
+                    <header>
+                        <column key="lineCode" display="线路编号" width="30"/>
+                        <column key="lineName" display="线路名称" width="20"/>
+                        <column key="stationCode" display="站点编号" width="30"/>
+                        <column key="stationName" display="站点名称" width="20"/>
+                        <column key="headPerson" display="负责人" width="30"/>
+                        <column key="phone" display="电话" width="30"/>
+                        <column key="wasBeginName" display="起始站" width="20"/>
+                        <column key="wasEndName" display="终点站" width="20"/>
+                        <column key="statusText" display="状态" width="30"/>
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+
+    <setting ID="userListExport">
+        <title>用户导出数据</title>
+        <description>用户导出数据</description>
+        <sheets>
+            <sheet name="用户数据" totalKey="isTotal" totalColSpan="8">
+                <headers>
+                    <header>
+                        <column key="phone" display="手机号" width="20"/>
+                        <column key="realName" display="姓名" width="30"/>
+                        <column key="workNumber" display="工号" width="20"/>
+                        <column key="sexmc" display="性别" width="20"/>
+                        <column key="email" display="邮箱" width="20"/>
+                        <column key="statusText" display="状态" width="30"/>
+                        <column key="orgName" display="部门" width="20"/>
+                        <column key="position" display="职位" width="20"/>
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+
+    <!-- 多sheet示例 -->
+    <setting ID="availableStockExport">
+        <title>可用库存</title>
+        <description>可用库存设置</description>
+        <sheets>
+            <sheet name="可用库存" totalKey="isTotal" totalColSpan="5">
+                <headers>
+                    <header>
+                        <column key="factoryName" display="工厂名称" width="30"/>
+                        <column key="warehouseName" display="仓库名称" width="20"/>
+                        <column key="productNumber" display="产品编号" width="30"/>
+                        <column key="productName" display="产品名称" width="20"/>
+                        <column key="primaryUnitNumberInStock" display="实时库存" width="20"/>
+                        <column key="primaryUnitNumberFrozen" display="昨日速冻报数" width="20"/>
+                        <column key="primaryUnitNumberYesterday" display="昨日库存" width="20"/>
+                        <column key="primaryUnitNumberCanBeSell" display="今日可供销售库存" width="20"/>
+                        <column key="primaryUnitNumberIsSendOutToday" display="当日发货总数" width="20"/>
+                        <column key="primaryUnitNumberIsSendOutAuditing" display="未审核发货单数量" width="20"/>
+                        <column key="primaryUnitNumberIsAllocationOut" display="当日调拨单出库总数" width="20"/>
+                        <column key="primaryUnitNumberIsAllocationIn" display="当日调拨单入库总数" width="20"/>
+                        <column key="primaryUnitNumberOtherOut" display="当日其他库存操作出库出库总数" width="30"/>
+                        <column key="primaryUnitNumberOtherIn" display="当日其他库存操作出库入库总数" width="30"/>
+                        <column key="primaryUnit" display="主单位" width="20"/>
+                        <column key="auxiliaryUnit" display="辅单位" width="20"/>
+                        <column key="unitConvert" display="主辅单位换算" width="20"/>
+                        <column key="categoryName" display="产品分类" width="20"/>
+                        <column key="brandName" display="品牌" width="20"/>
+                    </header>
+                </headers>
+            </sheet>
+            <sheet name="销售情况">
+                <headers>
+                    <header>
+                        <column key="factoryName" display="工厂名称" width="30"/>
+                        <column key="warehouseName" display="仓库名称" width="20"/>
+                        <column key="customerName" display="客户名称" width="20"/>
+                        <column key="customerName" display="客户分类" width="20"/>
+                        <column key="customerName" display="客户地区" width="20"/>
+                        <column key="customerName" display="实际发货数量" width="20"/>
+                        <column key="customerName" display="手机号" width="20"/>
+                        <column key="productNumber" display="产品编号" width="30"/>
+                        <column key="productName" display="产品名称" width="20"/>
+                        <column key="primaryUnitNumber" display="订单主单位数量" width="20"/>
+                        <column key="primaryUnit" display="主单位" width="20"/>
+                        <column key="auxiliaryUnitNumber" display="订单辅单位数量" width="20"/>
+                        <column key="auxiliaryUnit" display="辅单位" width="20"/>
+                        <column key="unitConvert" display="主辅单位换算" width="20"/>
+                        <column key="categoryName" display="产品分类" width="20"/>
+                        <column key="brandName" display="品牌" width="20"/>
+                        <column key="spec" display="规格" width="20"/>
+                        <column key="costPrice" display="成本价(元)" width="20"/>
+                        <column key="remark" display="产品备注" width="100"/>
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+
+
+    <!-- 多表头 多页签示例 -->
+    <setting ID="exportScoreSheet">
+        <title>成绩表</title>
+        <description>导出成绩表</description>
+        <sheets>
+            <sheet name="E" bankValue="">
+                <headers>
+                    <header>
+                        <column key="personNo" display="编号" width="6" rowSpan="2"></column>
+                        <column key="chineseName" display="姓名" width="16" rowSpan="2"></column>
+                        <column display="三阶（单位：秒）" colSpan="3"></column>
+                        <column display="获得段位" width="10" rowSpan="2" defaultValue="E_"></column>
+                        <column display="考生签字" width="14" rowSpan="2"></column>
+                    </header>
+                    <header>
+                        <column display="成绩1" width="11" skip="2"></column>
+                        <column display="成绩2" width="11"></column>
+                        <column display="最终成绩" width="11"></column>
+                    </header>
+                </headers>
+            </sheet>
+            <sheet name="D" bankValue="">
+                <headers>
+                    <header>
+                        <column key="personNo" display="编号" width="6" rowSpan="2"></column>
+                        <column key="chineseName" display="姓名" width="16" rowSpan="2"></column>
+                        <column display="三阶（单位：秒）" colSpan="3"></column>
+                        <column display="获得段位" width="10" rowSpan="2" defaultValue="D_"></column>
+                        <column display="考生签字" width="14" rowSpan="2"></column>
+                    </header>
+                    <header>
+                        <column display="成绩1" width="11" skip="2"></column>
+                        <column display="成绩2" width="11"></column>
+                        <column display="最终成绩" width="11"></column>
+                    </header>
+                </headers>
+            </sheet>
+            <sheet name="C" bankValue="">
+                <headers>
+                    <header>
+                        <column key="personNo" display="编号" width="6" rowSpan="2"></column>
+                        <column key="chineseName" display="姓名" width="16" rowSpan="2"></column>
+                        <column display="三阶（单位：秒）" colSpan="3"></column>
+                        <column display="其他项目（√或×）" colSpan="3"></column>
+                        <column display="获得段位" width="10" rowSpan="2" defaultValue="C_"></column>
+                        <column display="考生签字" width="14" rowSpan="2"></column>
+                    </header>
+                    <header>
+                        <column display="成绩1" width="11" skip="2"></column>
+                        <column display="成绩2" width="11"></column>
+                        <column display="最终成绩" width="11"></column>
+                        <column display="单手" width="7"></column>
+                        <column display="镜面" width="7"></column>
+                        <column display="二阶" width="7"></column>
+                    </header>
+                </headers>
+            </sheet>
+            <sheet name="B" bankValue="">
+                <headers>
+                    <header>
+                        <column key="personNo" display="编号" width="6" rowSpan="2"></column>
+                        <column key="chineseName" display="姓名" width="16" rowSpan="2"></column>
+                        <column display="三阶（单位：秒）" colSpan="3"></column>
+                        <column display="其他项目（√或×）" colSpan="6"></column>
+                        <column display="获得段位" width="10" rowSpan="2" defaultValue="B_"></column>
+                        <column display="考生签字" width="14" rowSpan="2"></column>
+                    </header>
+                    <header>
+                        <column display="成绩1" width="11" skip="2"></column>
+                        <column display="成绩2" width="11"></column>
+                        <column display="最终成绩" width="11"></column>
+                        <column display="单手" width="5"></column>
+                        <column display="镜面" width="5"></column>
+                        <column display="二阶" width="5"></column>
+                        <column display="四阶" width="5"></column>
+                        <column display="五阶" width="5"></column>
+                        <column display="塔型" width="5"></column>
+                    </header>
+                </headers>
+            </sheet>
+            <sheet name="A" bankValue="">
+                <headers>
+                    <header>
+                        <column key="personNo" display="编号" width="6" rowSpan="2"></column>
+                        <column key="chineseName" display="姓名" width="16" rowSpan="2"></column>
+                        <column key="examLevel" display="挑战段位" width="10" rowSpan="2"></column>
+                        <column display="考试成绩" colSpan="10"></column>
+                        <column display="总时长" width="10" rowSpan="2"></column>
+                        <column display="考生签字" width="14" rowSpan="2"></column>
+                    </header>
+                    <header>
+                        <column display="三阶" width="8" skip="3"></column>
+                        <column display="单手" width="8"></column>
+                        <column display="镜面" width="8"></column>
+                        <column display="二阶" width="8"></column>
+                        <column display="四阶" width="8"></column>
+                        <column display="五阶" width="8"></column>
+                        <column display="塔型" width="8"></column>
+                        <column display="盲拧" width="8"></column>
+                        <column display="球形" width="8"></column>
+                        <column display="斜转" width="8"></column>
+                    </header>
+                </headers>
+            </sheet>
+        </sheets>
+    </setting>
+
+
+</settings>

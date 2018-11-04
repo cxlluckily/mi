@@ -1,0 +1,69 @@
+{
+  "info": {
+    "_postman_id": "f90ffb45-f662-4f7c-bcd3-b97804a88ce6",
+    "name": "手机端接口",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "查询运营设备信息",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"stationId\":55\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8082/mi/onlineequipment/getOnlinequipmentList.do",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "mi",
+            "onlineequipment",
+            "getOnlinequipmentList.do"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "运营设备修改二维码",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t \"equipmentId\":55,\n\t \"qrCode\":0001\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8082/mi/onlineequipment/updateOnlineequipment.do",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "mi",
+            "onlineequipment",
+            "updateOnlineequipment.do"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

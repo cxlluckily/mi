@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <context:component-scan base-package="com"/>
+
+    <!--总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序-->
+    <!-- 调度器 -->
+    <!-- 此处配置单线程的job触发器，最大线长为触发器的个数 -->
+    <bean name="singleThreadingScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="smsJobTrigger"/>
+                <ref bean="clearFileJobTrigger"/>
+            </list>
+        </property>
+        <property name="configLocation"   value="classpath:quartz.properties"></property>
+    </bean>
+
+    <!--获得微信Token以及JsApi签名任务 -->
+    <!-- 获得微信Token以及JsApi签名任务Job -->
+    <bean name="smsJob" class="com.shankephone.mi.quartzjob.SmsJob" lazy-init="false"></bean>
+
+    <!-- 获得微信Token以及JsApi签名任务JobDetail -->
+    <bean name="smsJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="smsJob"></ref>
+        </property>
+        <property name="targetMethod" value="execute"></property>
+        <!-- 设置等待上一任务完成才会开始下一任务-->
+        <property name="concurrent" value="false"></property>
+    </bean>
+
+    <bean id="smsJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="smsJobDetail"/>
+        <property name="startDelay" value="0"/>
+        <property name="cronExpression" value="0 0 1 * * ?"/>
+    </bean>
+
+
+    <!-- 清除临时目录下文件 -->
+    <bean name="clearFileJob" class="com.shankephone.mi.quartzjob.ClearFileJob" lazy-init="false"></bean>
+    <bean name="clearFileJobBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="clearFileJob"></ref>
+        </property>
+        <property name="targetMethod" value="execute"></property>
+        <!-- 设置等待上一任务完成才会开始下一任务-->
+        <property name="concurrent" value="false"></property>
+    </bean>
+
+    <bean id="clearFileJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="clearFileJobBean"/>
+        <property name="startDelay" value="0"/>
+        <property name="cronExpression" value="0 * 18 * * ?"/>
+    </bean>
+</beans>

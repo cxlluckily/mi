@@ -1,0 +1,131 @@
+{
+	"id": "32cde8b9-00ca-4260-9ea6-9fe03cd4ffdd",
+	"name": "数据字典管理",
+	"description": "",
+	"auth": null,
+	"events": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "eeafb05f-f0f5-49da-b615-72913796cf7c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ee9853d8-114e-4545-a231-24da478aebe2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variables": [],
+	"order": [
+		"ef21f0f7-489c-44bc-b82f-83c8e22e5dd9",
+		"204e92e0-6fa6-4ab5-90fc-63b530bbc337",
+		"cb0c57bc-1c25-4830-a84c-76be82ff18f9",
+		"efebb416-41d8-4d08-a765-6d35d5e41da0"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "204e92e0-6fa6-4ab5-90fc-63b530bbc337",
+			"name": "新增",
+			"url": "http://localhost:8080/mi/dataDict/addDataDict.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"code\":\"status\", \"name\":\"状态\", \"dataLabel\":\"挂起\", \"status\":\"supend_using\", \"sort\":3}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "cb0c57bc-1c25-4830-a84c-76be82ff18f9",
+			"name": "修改",
+			"url": "http://localhost:8080/mi/dataDict/updateDataDict.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"dataDictionaryId\":5,\"code\":\"status\", \"name\":\"状态\", \"dataLabel\":\"挂起\", \"status\":\"supend_using\", \"sort\":3}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ef21f0f7-489c-44bc-b82f-83c8e22e5dd9",
+			"name": "数据字典分页查询",
+			"url": "http://localhost:8080/mi/dataDict/list.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"code\":\"\", \"name\":\"\", \"dataLabel\":\"\", \"status\":\"\", \"pageNumber\":1, \"pageSize\":20}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "efebb416-41d8-4d08-a765-6d35d5e41da0",
+			"name": "删除",
+			"url": "http://localhost:8080/mi/dataDict/deleteDataDict.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"dataDictionaryId\":5}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}

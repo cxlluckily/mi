@@ -1,0 +1,590 @@
+{
+	"info": {
+		"_postman_id": "ce9f5a8a-57af-4d97-a400-bdd9b9dc3d07",
+		"name": "维修管理",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "获取站点信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n\t\"searchContent\":\"北京\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getLineAndStationInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getLineAndStationInfo.do"
+					]
+				},
+				"description": "当 searchContent 为空的时候 返回树状结构\n当 searchContent 不为空的时候，返回列表"
+			},
+			"response": []
+		},
+		{
+			"name": "获取设备类型",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getEquipmentType.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getEquipmentType.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取 设备列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lineId\":11,\n\t\"stationId\":55,\n\t\"sparePartTypeId\":63\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getEquipmentList.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getEquipmentList.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据设备Id获取设备错误现象",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"equipmentId\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getErrorPhenomenonByEquipmentId.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getErrorPhenomenonByEquipmentId.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取联系人信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n\t\"type\":\"phone\",\n\t\"searchContent\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getConcatPeopleList.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getConcatPeopleList.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "设置联系人",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"maintenanceApplyId\":1,\n\t\"userIds\":[1,2,3]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/setConcatPeople.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"setConcatPeople.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取维修单据分页数据",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n \"categoryName\":\"\",\n \"applyUser\":\"\",\n \"beginTime\":\"2018-07-01\",\n \"endTime\":\"2018-08-10\",\n \"applyStatus\":\"repaired\",\n \"maintenanceUser\":\"\",\n \"stationName\":\"\",\n \"type\":\"phone\",\n \"start\":0,\n \"limit\":20\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getRepairApplyPageInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getRepairApplyPageInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据Id获取维修申请数据",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"maintenanceApplyId\":\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getApplyInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getApplyInfo.do"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4e72eb03-8534-4dcd-ad07-191786c7c6f2",
+					"name": "根据Id获取维修申请数据",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"maintenanceApplyId\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/mi/repairApply/getApplyInfo.do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mi",
+								"repairApply",
+								"getApplyInfo.do"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Disposition",
+							"value": "inline;filename=f.txt",
+							"name": "Content-Disposition",
+							"description": "An opportunity to raise a \"File Download\" dialogue box for a known MIME type"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 Aug 2018 03:39:19 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.3.15.v20161220)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"body": "{\"statusCode\":200,\"result\":\"success\",\"message\":\"操作成功\",\"data\":{\"createUserId\":47,\"maintenanceApplyId\":1,\"repairErrorPhenomenon\":[{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533186999000,\"breakdownInfoId\":1,\"createTime\":1533177722000,\"breakdownKey\":\"故障ID1\",\"faultType\":\"report\",\"checked\":true,\"breakAbbreviated\":\"故障简称2\",\"createUser\":\"\",\"breakDescription\":\"故障描述3\",\"status\":\"start_using\"},{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533538374000,\"breakdownInfoId\":13,\"createTime\":1533538374000,\"breakdownKey\":\"故障ID\",\"faultType\":\"report\",\"checked\":false,\"breakAbbreviated\":\"故障简称\",\"createUser\":\"\",\"breakDescription\":\"故障描述\",\"status\":\"start_using\"},{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533538375000,\"breakdownInfoId\":14,\"createTime\":1533538375000,\"breakdownKey\":\"故障ID\",\"faultType\":\"report\",\"checked\":true,\"breakAbbreviated\":\"故障简称\",\"createUser\":\"\",\"breakDescription\":\"故障描述\",\"status\":\"start_using\"},{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533538388000,\"breakdownInfoId\":16,\"createTime\":1533538388000,\"breakdownKey\":\"故障ID\",\"faultType\":\"report\",\"checked\":false,\"breakAbbreviated\":\"故障简称\",\"createUser\":\"\",\"breakDescription\":\"故障描述\",\"status\":\"start_using\"},{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533538389000,\"breakdownInfoId\":17,\"createTime\":1533538389000,\"breakdownKey\":\"故障ID\",\"faultType\":\"report\",\"checked\":false,\"breakAbbreviated\":\"故障简称\",\"createUser\":\"\",\"breakDescription\":\"故障描述\",\"status\":\"start_using\"}],\"lineName\":\"1号线\",\"errorCode\":\"123\",\"maintenanceUserID\":1,\"equipmentNO\":\"001\",\"categoryName\":\"电脑\",\"equipmentId\":1,\"appointDate\":1533819720000,\"maintenanceUser\":\"维修人\",\"applyUser\":\"admin\",\"modifyUser\":\"admin\",\"copyInfo\":[],\"breakDescribe\":\"1\",\"modifyTime\":1533889527000,\"applyNO\":\"REPAIR1533819720254713315\",\"stationName\":\"北京站\",\"logs\":[{\"modifyUser\":\"admin\",\"targetPerson\":\"维修人\",\"modifyTime\":1533720817000,\"targetPersonId\":1,\"createTime\":1533720817000,\"maintenanceApplyId\":1,\"initiator\":\"admin\",\"initiatorId\":47,\"createUser\":\"admin\",\"maintenanceLogsId\":1,\"status\":\"Dispatched\"}],\"appointUserId\":47,\"stationId\":55,\"images\":[],\"appointUser\":\"admin\",\"reportErrorPhenomenon\":[{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533186999000,\"breakdownInfoId\":1,\"createTime\":1533177722000,\"breakdownKey\":\"故障ID1\",\"faultType\":\"report\",\"checked\":true,\"breakAbbreviated\":\"故障简称2\",\"createUser\":\"\",\"breakDescription\":\"故障描述3\",\"status\":\"start_using\"},{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533538374000,\"breakdownInfoId\":13,\"createTime\":1533538374000,\"breakdownKey\":\"故障ID\",\"faultType\":\"report\",\"checked\":false,\"breakAbbreviated\":\"故障简称\",\"createUser\":\"\",\"breakDescription\":\"故障描述\",\"status\":\"start_using\"},{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533538375000,\"breakdownInfoId\":14,\"createTime\":1533538375000,\"breakdownKey\":\"故障ID\",\"faultType\":\"report\",\"checked\":true,\"breakAbbreviated\":\"故障简称\",\"createUser\":\"\",\"breakDescription\":\"故障描述\",\"status\":\"start_using\"},{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533538388000,\"breakdownInfoId\":16,\"createTime\":1533538388000,\"breakdownKey\":\"故障ID\",\"faultType\":\"report\",\"checked\":false,\"breakAbbreviated\":\"故障简称\",\"createUser\":\"\",\"breakDescription\":\"故障描述\",\"status\":\"start_using\"},{\"modifyUser\":\"\",\"sparePartId\":38,\"modifyTime\":1533538389000,\"breakdownInfoId\":17,\"createTime\":1533538389000,\"breakdownKey\":\"故障ID\",\"faultType\":\"report\",\"checked\":false,\"breakAbbreviated\":\"故障简称\",\"createUser\":\"\",\"breakDescription\":\"故障描述\",\"status\":\"start_using\"}],\"wasFinished\":\"no\",\"lineId\":11,\"operationSubjectId\":38,\"createTime\":1533819722000,\"createUser\":\"admin\",\"sparePartTypeId\":63,\"applyDate\":1533819720000,\"applyStatus\":\"toBeRepair\",\"wasEvaluate\":\"no\"}}"
+				}
+			]
+		},
+		{
+			"name": "获取维修人员列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"stationId\":56\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getRepairerInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getRepairerInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "派单",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n\t\"maintenanceApplyId\":1,\n\t\"maintenanceUser\":\"维修人\",\n\t\"maintenanceUserID\":1,\n\t\"userIds\":[1,2,3,4]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/appointRepairInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"appointRepairInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "维修人员获取分配给自己的任务",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n \"categoryName\":\"\",\n \"applyUser\":\"\",\n \"beginTime\":\"2018-07-01\",\n \"endTime\":\"2018-08-10\",\n \"applyStatus\":\"maintenance\",\n \"stationName\":\"\",\n \"type\":\"pc\",\n \"start\":0,\n \"limit\":20\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getRepairInfoPager.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getRepairInfoPager.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据故障现象获取处理措施信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n\t\"errors\":[1,2,3,4],\n\t\"searchContent\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getTreatmentInfoList.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getTreatmentInfoList.do"
+					]
+				},
+				"description": "errors 为 breakdownInfoId 数组"
+			},
+			"response": []
+		},
+		{
+			"name": "根据故障现象获取处理措施",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n\t\"errors\":[1,2,3,4]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getTreatmentInfoList.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getTreatmentInfoList.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "维修人员接单",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n \"maintenanceApplyId\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/repairCheckIn.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"repairCheckIn.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据设备Id获取背包中的可替换的设备",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/getSparePartsInBag.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"getSparePartsInBag.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "维修完成",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"maintenanceApplyId\": 1,\n  \"手机端的api\":\"repairEquipmentForPhone\",\n  \"applyStatus\": \"applyStatus\",\n  \"maintenanceDescribe\": \"maintenanceDescribe\",\n  \"wasFinished\": \"wasFinished\",\n  \"processDescribe\": \"processDescribe\",\n  \"noRepairReason\": \"noRepairReason\",\n  \"breakDescribe\": \"breakDescribe\",\n  \"errors\": [\n    1,\n    3,\n    4,\n    5,\n    6\n  ],\n  \"solutionEntities\": [\n    {\n      \"repairInfoId\": 1,\n      \"processMode\": \"222\"\n    },\n    {\n      \"repairInfoId\": 0,\n      \"processMode\": \"手填的\"\n    }\n  ],\n  \"images\": [\n    \"name1.jpg\",\n    \"name1.jpg\"\n  ],\n  \"changeSparePartEntities\": [\n    {\n      \"userDeviceId\":\"userDeviceId\",\n      \"newStockId\": \"newStockId\",\n      \"newSparePartId\": \"newSparePartId\",\n      \"replaceCount\": \"replaceCount\",\n      \"inventoryType\":\"inventoryType\",\n      \"newQrCode\":\"newQrCode\",\n      \"oldQrCode\":\"oldQrCode\"\n}\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/repairEquipment.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"repairEquipment.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "评价",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n \"speedAppraise\":\"speedAppraise\",\n \"serviceAppraise\":\"serviceAppraise\",\n \"operationSpecificationAppraise\":\"operationSpecificationAppraise\",\n \"appraiseDescribe\":\"appraiseDescribe\",\n \"applyStatus\":\"maintenance,all\",\n \"maintenanceApplyId\":\"maintenanceApplyId\",\n \"wasFinished\":\"wasFinished\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/repairApply/repairEvaluation.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"repairApply",
+						"repairEvaluation.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

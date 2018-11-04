@@ -1,0 +1,151 @@
+/**
+  函数作用: px 缩小100倍转换为 rem; 例 79 -> 0.79rem;
+  @param {number} 值; 例 79;
+  @return 转换过后的 rem 值; 例 0.79rem;
+*/
+// @function g-rem($num) {
+//   @return $num / 100 + rem;
+// }
+$widthWeb12: 20px; // -> 12px
+$widthWeb14: 22px; // -> 14px
+$widthWeb16: 24px; // -> 16px
+$widthWeb18: 26px; // -> 18px
+$widthWeb22: 28px; // -> 22px
+$widthWeb25: 30px; // -> 25px
+$widthWeb30: 32px; // -> 30px
+$heightWebFooter: 80px;
+
+// loading 统一样式图
+.gloobalLoading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: calc(100% - 80px);
+  background-color: #f6f7eb;
+
+  .loadingGif {
+    margin: 48% auto 0;
+    width: 323px;
+    height: 300px;
+  }
+}
+
+.noData {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: calc(100% - 90px);
+  background-color: #f6f7eb;
+
+  .NoDataGif {
+    margin: 48% auto 0;
+    width: 323px;
+    height: 300px;
+  }
+}
+
+.Notice {
+  @extend .noData;
+
+  .NoticeJpg {
+    @extend .NoDataGif;
+  }
+}
+
+// 初始页为空时，显示样的
+.gloobalEmptyPrompt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  margin-top: 66px;
+  height: calc(100% - 146px);
+  background-color: #f6f7eb;
+
+  .emptyPrompt {
+    margin: 34% auto 0;
+    width: 352px;
+    height: 368px;
+    font-size: $widthWeb30;
+    color: #666;
+    text-align: center;
+  }
+}
+
+// 底部定位统一样式表
+// 底部导航栏
+.tabBar {
+  height: $heightWebFooter;
+}
+
+// 其他页面底部定位提交按钮
+.globalFooter {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $heightWebFooter;
+  text-align: right;
+  background-color: #eee;
+
+  button {
+    width: 220px;
+    height: 100%;
+    font-size: $widthWeb25;
+    color: #fff;
+    background-color: #fc6806;
+  }
+}
+
+// 路由高度计算
+.routerView {
+  width: 100%;
+  height: calc(100% - 80px);
+}
+
+// 日历样式
+.mint-datetime-picker {
+  height: 430px;
+  position: relative;
+
+  .picker-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    padding-top: 20px;
+    height: 60px;
+    width: 100%;
+    font-size: 0;
+    background-color: #fff;
+    box-sizing: border-box;
+
+    .mint-datetime-action {
+      display: inline-block;
+      font-size: .4rem;
+      line-height: .4rem;
+      color: #bfbfbf;
+
+      &:nth-last-child(1) {
+        color: #fd8521;
+      }
+    }
+  }
+
+  .picker-center-highlight {
+    border-top: 1px solid #dfdcdc;
+    border-bottom: 1px solid #dfdcdc;
+  }
+
+  .picker-items {
+    .picker-item {
+      font-size: .36rem;
+    }
+  }
+}

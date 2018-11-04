@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "2f6d4b67-c194-4167-9ee5-bca9e8706d52",
+		"name": "仓库管理相关",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "\b获得仓库分页数据",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"workSectionId\":8,\n\t\"warehouseName\":\"\",\n\t\"headPerson\":\"\",\n\t\"contactNumber\":\"\",\n\n\t\"status\":\"start_using\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/warehouse/getPagerInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"warehouse",
+						"getPagerInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据Id获取仓库信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"warehouseId\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/warehouse/getWarehouseInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"warehouse",
+						"getWarehouseInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取站点信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"parentWarehouseId\":-1,\n\t\"workSectionId\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/warehouse/getStationInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"warehouse",
+						"getStationInfo.do"
+					]
+				},
+				"description": "根据传入的父节点Id 获取初始化数据\n     * 如果不是一级库的时候的话 要根据父Id 获取父节点对应的工区设置的站点，新添加的节点选择的站点只能在父节点的范围内\n     * 如果是一级库，则可以自行选择工区，初始化后工区下的站点\n     * <p>\n     * pId 如果为-1的话 是不需要传到后台调用此方法的"
+			},
+			"response": []
+		},
+		{
+			"name": "添加仓库",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"warehouseName\":\"测试仓库\",\n\t\"parentWarehouseId\":-1,\n\t\"status\":\"start_using\",\n\t\"operationSubjectId\":1,\n\t\"workSectionId\":1,\n\t\"selectedStationIdList\":[2,3]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/warehouse/addWarehouseInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"warehouse",
+						"addWarehouseInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新仓库",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"warehouseId\":1,\n\t\t\"warehouseName\":\"测试仓库1\",\n\t\"parentWarehouseId\":-1,\n\t\"status\":\"start_using\",\n\t\"operationSubjectId\":1,\n\t\"workSectionId\":1,\n\t\"selectedStationIdList\":[2,3]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/warehouse/updateWarehouseInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"warehouse",
+						"updateWarehouseInfo.do"
+					]
+				},
+				"description": "示例中只包含必须字段"
+			},
+			"response": []
+		},
+		{
+			"name": "删除仓库",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"warehouseId\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/warehouse/deleteWarehouseInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"warehouse",
+						"deleteWarehouseInfo.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

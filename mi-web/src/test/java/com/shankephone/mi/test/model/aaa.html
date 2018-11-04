@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    (function() {
+        function checkmove(move, arr) { // 检测步骤合理性
+            var l = arr.length;
+            return move == arr[l - 1] || (move == arr[l - 2] && (move / 2 | 0) == (arr[l - 1] / 2 | 0));
+        }
+        
+        function rndCube(maxSteps) { // 生成随机打乱步骤
+            var cubeArr = [], // 打乱步骤数组
+                cubeStr = "", // 打乱步骤字符串
+                cube = ["R", "L", "F", "B", "U", "D"], // 步骤
+                types = ["", "", "'", "'", "2"], // 步骤附加条件
+                r, // 随机数
+                i;
+            
+            maxSteps = maxSteps || 25
+            
+            for (i = 0; i < maxSteps; i++) {
+                do {
+                    r = Math.random() * 6 | 0;
+                } while (checkmove(r, cubeArr));
+                cubeArr.push(r);
+                cubeStr += cube[r] + types[Math.random() * 5 | 0] + " ";
+            }
+            
+            return cubeStr;
+        }
+        
+        console.log(rndCube(20));
+    })();
+</script>
+</html>

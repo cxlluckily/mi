@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "a7dd8ce6-b6eb-4599-8334-fabfee458302",
+		"name": "盘库",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "盘库修改",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " \n\t[{\n\t\t\"inventoryDetailId\":\"1\",\n\t\t\"inventoryTaskId\":\"1\",\n\t\t\"beforeAccount\":9,\n\t\t\"aftierAccount\":10\n\t\t\n\t} \n\t\n\t]\n\t\n "
+				},
+				"url": {
+					"raw": "http://192.168.6.22:8082/mi/inventoryTask/updateInventoryTask.do",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"6",
+						"22"
+					],
+					"port": "8082",
+					"path": [
+						"mi",
+						"inventoryTask",
+						"updateInventoryTask.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "盘库查询",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"inventoryTaskId\":\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.6.22:8082/mi/inventoryTask/getInventoryDetailEntity.do",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"6",
+						"22"
+					],
+					"port": "8082",
+					"path": [
+						"mi",
+						"inventoryTask",
+						"getInventoryDetailEntity.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

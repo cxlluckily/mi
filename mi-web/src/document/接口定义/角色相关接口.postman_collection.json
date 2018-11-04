@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "7cb5c2bb-767d-45a6-9615-1ff83e810985",
+		"name": "角色相关接口",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "获取角色分页数据",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n  \"pageNumber\":1,\n  \"pageSize\":10000,\n  \"operationSubjectId\":1,\n  \"roleName\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/roleInfo/getRolePagerInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"roleInfo",
+						"getRolePagerInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据 Id 获取角色信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n  \"roleId\":2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/roleInfo/getRoleInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"roleInfo",
+						"getRoleInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "添加角色",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n    \"roleName\":\"test\",\n    \"roleCode\":\"1avb0\",\n    \"status\":\"start_using\",\n    \"operationSubjectId\":1,\n    \"functionTreeIds\": [1,2]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/roleInfo/addRoleInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"roleInfo",
+						"addRoleInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新角色",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"roleId\":4,\n    \"roleName\":\"test1\",\n    \"roleCode\":\"1avb0\",\n    \"status\":\"start_using\",\n    \"operationSubjectId\":1,\n    \"functionTreeIds\": [1,2]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/roleInfo/updateRoleInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"roleInfo",
+						"updateRoleInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除角色",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"roleId\":4\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/roleInfo/deleteRoleInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"roleInfo",
+						"deleteRoleInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "验证角色名称是否重复",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"roleId\":4,\n\t\"operationSubjectId\":1,\n\t\"roleName\":\"管理员\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/roleInfo/validateRoleNameExist.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"roleInfo",
+						"validateRoleNameExist.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

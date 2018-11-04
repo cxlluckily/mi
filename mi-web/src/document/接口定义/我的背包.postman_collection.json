@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "2da73b5e-817f-40d2-ba05-87c13b4cc06e",
+		"name": "我的背包",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "我的备件详情",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://192.168.1.84:8082/mi/stockInfo/GetMyPartPagerDetailInfo.do",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"84"
+					],
+					"port": "8082",
+					"path": [
+						"mi",
+						"stockInfo",
+						"GetMyPartPagerDetailInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "我的背包",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"equipmentId\":6\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/mi/mySparePart/getMySparePartList.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mi",
+						"mySparePart",
+						"getMySparePartList.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

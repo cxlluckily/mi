@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "f5ec0136-5e17-40e1-8fd1-ce302eb6f132",
+		"name": "用户授权相关",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "获得批量授权页面初始化数据",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"8af32954526a9e4e96e13681af142501\",\n\t\"operationSubjectId\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/userPermission/getInitPageDataForBatchAuthorization.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"userPermission",
+						"getInitPageDataForBatchAuthorization.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "添加批量授权信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"userIds\":[2,3,4],\n\t\"roleIds\":[2,3],\n\t\"warehouseIds\":[1,2],\n\t\"workSectionIds\":[1,2]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/userPermission/insertBatchAuthorizationInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"userPermission",
+						"insertBatchAuthorizationInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据用户 Id 获取用户授权信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"userId\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/userPermission/getUserAuthorizationInfoByUserId.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"userPermission",
+						"getUserAuthorizationInfoByUserId.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

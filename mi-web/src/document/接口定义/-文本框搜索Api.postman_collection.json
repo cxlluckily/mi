@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "34bf2a41-2302-4bf8-a8d3-cd5faaa270e9",
+		"name": "\b文本框搜索Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "根据输入内容获取备件信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"operationSubjectId\":1,\n\t\"searchContent\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/baseData/getSparePartList.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"baseData",
+						"getSparePartList.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据输入内容搜索仓库内的备件",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"warehouseId\":1,\n\t\"searchContent\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/baseData/getSparePartInWarehouse.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"baseData",
+						"getSparePartInWarehouse.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

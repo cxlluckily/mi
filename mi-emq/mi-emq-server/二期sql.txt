@@ -1,0 +1,139 @@
+create table device_mqtt_regist_logs
+(
+   mqttRegistLogId      bigint not null auto_increment comment '设备注册信息日志ID',
+   equipmentId          bigint comment '运营设备ID',
+   sendJson             text comment '发送json',
+   receiveJson          text comment '接收json',
+   createUser           varchar(32) comment '添加人',
+   createTime           datetime default CURRENT_TIMESTAMP comment '创建时间',
+   sendTime             datetime comment '发送时间',
+   primary key (mqttRegistLogId)
+);
+create table client_device
+(
+   clientDeviceId       bigint not null auto_increment comment '客户端设备ID',
+   deviceUid            varchar(128) comment '设备唯一ID',
+   deviceCode           varchar(128) comment '设备编号',
+   stationCode          varchar(128) comment '设备所在车站代码',
+   deviceStatus         varchar(128) comment '设备状态',
+   primary key (clientDeviceId)
+);
+create table client_mqtt_logs
+(
+   clientMqttLogId      bigint not null auto_increment comment '设备端接受命令日志ID',
+   clientDeviceId       bigint comment '客户端设备ID',
+   createTime           datetime default CURRENT_TIMESTAMP comment '创建时间',
+   json                 text comment '发送json',
+   logType              varchar(64) comment '类型',
+   primary key (clientMqttLogId)
+);
+create table device_mqtt_command_batch
+(
+   mqttCommandBatchId   bigint not null auto_increment comment '设备命令批次表ID',
+   batchNo              varbinary(32) comment '批次',
+   commandType          varchar(32) comment '命令类型 ',
+   commandCategory      varchar(32) comment '命令类别',
+   sendJson             text comment '发送json',
+   createTime           datetime default CURRENT_TIMESTAMP comment '创建时间',
+   createUser           varchar(32) comment '添加人',
+   primary key (mqttCommandBatchId)
+);
+create table device_mqtt_command_logs
+(
+   mqttCommandLogId     bigint not null auto_increment comment '设备调用命令日志表ID',
+   equipmentId          bigint comment '运营设备ID',
+   mqttCommandBatchId   bigint comment '设备命令批次表ID',
+   commandType          varchar(32) comment '命令类型 ',
+   commandCategory      varchar(32) comment '命令类别',
+   commandContent       text comment '命令内容',
+   sendJson             text comment '发送json',
+   receiveJson          text comment '应答json',
+   resultJson           text comment '结果json',
+   executeStatus        varchar(32) comment '执行状态',
+   createUser           varchar(32) comment '添加人',
+   createTime           datetime default CURRENT_TIMESTAMP comment '创建时间',
+   responseTime         datetime comment '应答时间',
+   finishTime           datetime comment '完成时间',
+   primary key (mqttCommandLogId)
+);
+create table device_mqtt_command_file
+(
+   mqttCommandFileId    bigint not null comment '设备调用命令文件ID',
+   mqttCommandLogId     bigint comment '设备调用命令日志表ID',
+   fileCategory         varchar(64) comment '文件类型',
+   filePath             varchar(256) comment '文件所在路径',
+   fileName             varchar(64) comment '文件名称',
+   fileFormat           varchar(64) comment '文件格式',
+   fileVersionNumber    varchar(128) comment '文件版本号',
+   fileSize             varchar(32) comment '文件大小(Byte)',
+   fileDigest           varchar(64) comment '文件摘要(MD5)',
+   fileLastTime         datetime comment '文件最后更新时间',
+   fileType             varchar(32) comment '类型',
+   createUser           varchar(32) comment '添加人',
+   createTime           datetime default CURRENT_TIMESTAMP comment '创建时间',
+   primary key (mqttCommandFileId)
+);
+create table device_preinstall_command
+(
+   preinstallCommandId  bigint not null auto_increment comment '设备预设命令ID',
+   sort                 int,
+   commandName          varchar(64),
+   commandContext       varchar(256),
+   status               varchar(32),
+   createTime           datetime default CURRENT_TIMESTAMP comment '创建时间',
+   createUser           varchar(32) comment '添加人',
+   primary key (preinstallCommandId)
+);
+
+ALTER TABLE operations_equipment ADD deviceuId VARCHAR(128) NULL COMMENT '设备唯一ID(注册)';
+ALTER TABLE operations_equipment ADD deviceStatus VARCHAR(64) NULL COMMENT '设备运行状态';
+ALTER TABLE operations_equipment ADD deviceCode VARCHAR(128) NULL COMMENT '设备编号(注册)';
+ALTER TABLE operations_equipment ADD stationCode VARCHAR(128) NULL COMMENT '设备所在车站代码(注册)';
+ALTER TABLE operations_equipment ADD fileServerIP VARCHAR(32) NULL COMMENT '文件服务器ip';
+ALTER TABLE operations_equipment ADD fileServerUserName VARCHAR(128) NULL COMMENT '文件服务器用户名';
+ALTER TABLE operations_equipment ADD fileServerPassword VARCHAR(128) NULL COMMENT '文件服务器密码';
+ALTER TABLE operations_equipment ADD token VARCHAR(128) NULL COMMENT '服务器返回的认证Token';
+ALTER TABLE stock_inventory_task ADD headPersonUserId BIGINT NULL COMMENT '负责人ID';
+
+create table device_no_regist
+(
+   deviceNoRegistId     bigint not null comment '未注册成功的设备ID',
+   deviceuId            varchar(128) comment '设备唯一ID',
+   deviceCode           varchar(128) comment '设备编号',
+   stationCode          varchar(128) comment '设备所在车站代码',
+   createTime           datetime default CURRENT_TIMESTAMP comment '创建时间',
+   primary key (deviceNoRegistId)
+);
+
+create table operations_equipment_modify_log
+(
+   equipmentModifyLogId bigint not null auto_increment comment '运营设备属性修改日志ID',
+   equipmentId          bigint comment '运营设备ID',
+   modifyAttribute      varchar(256) comment '修改属性',
+   beforeValue          varchar(256) comment '修改前值',
+   afterValue           varchar(256) comment '修改后值',
+   modifyUser           varchar(32) comment '修改人',
+   modifyTime           datetime comment '修改时间',
+   remark               varchar(512) comment '备注',
+   primary key (equipmentModifyLogId)
+);
+create table device_status_monitor_logs
+(
+   deviceStatusMonitorLogId bigint not null auto_increment comment '设备状态监控日志ID',
+   equipmentId          bigint comment '运营设备ID',
+   receiveJson          text comment '接收json',
+   receiveTime          datetime default CURRENT_TIMESTAMP comment '创建时间',
+   primary key (deviceStatusMonitorLogId)
+);
+create table device_preinstall_command
+(
+   preinstallCommandId  bigint not null auto_increment comment '设备预设命令ID',
+   sort                 int,
+   commandName          varchar(64),
+   commandContext       varchar(256),
+   status               varchar(32),
+   createTime           datetime default CURRENT_TIMESTAMP comment '创建时间',
+   createUser           varchar(32) comment '添加人',
+   primary key (preinstallCommandId)
+);
+

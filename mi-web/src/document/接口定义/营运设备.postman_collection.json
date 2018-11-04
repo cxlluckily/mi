@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "3fefc7c9-a5dc-4e8b-b3b3-89db9dc1aa4f",
+		"name": "营运设备",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "根据工区和线路获取站点",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lineId\":\"11,12\",\n\t\"workSectionId\":\"20,21,22,23\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/operationsEquipment/getStationList.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"operationsEquipment",
+						"getStationList.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取营运设备分页数据",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\t\"stationId\":\"55,55\",\n\t\t\"sparePartTypeId\":\"63,63\",\n\t\t\"partName\":\"\",\n\t\t\"materiaCoding\":\"\",\n\t\t\"specificationModel\":\"\",\n\t\t\"brand\":\"\",\n\t\t\"start\":0,\n\t\t\"limit\":20\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/operationsEquipment/getPagerInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"operationsEquipment",
+						"getPagerInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "添加营运设备",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"lineId\":1,\n\t\"stationId\":1,\n\t\"sparePartTypeId\":1,\n\t\"workSectionId\":1,\n\t\"equipmentNo\":\"\",\n\t\"serialNumber\":\"\",\n\t\"uniquelyIdentifies\":\"\",\n\t\"status\":\"\",\n\t\"location\":\"\",\n\t\"remark\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/operationsEquipment/addEquipment.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"operationsEquipment",
+						"addEquipment.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "\b更新营运设备",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"equipmentId\":1,\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"lineId\":1,\n\t\"stationId\":1,\n\t\"sparePartTypeId\":1,\n\t\"workSectionId\":1,\n\t\"equipmentNo\":\"\",\n\t\"serialNumber\":\"\",\n\t\"uniquelyIdentifies\":\"\",\n\t\"status\":\"\",\n\t\"location\":\"\",\n\t\"remark\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/operationsEquipment/updateEquipment.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"operationsEquipment",
+						"updateEquipment.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除营运设备",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"equipmentId\":1,\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/operationsEquipment/updateEquipment.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"operationsEquipment",
+						"updateEquipment.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据Id获取营运设备",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"equipmentId\":1,\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/operationsEquipment/getEquipment.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"operationsEquipment",
+						"getEquipment.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "77eb29ba-e656-4db7-9301-7980ef83df3c",
+		"name": "货架管理",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "搜索文本框Api",
+			"description": null,
+			"item": []
+		},
+		{
+			"name": "添加货架信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"warehouseId\":1,\n\t\"houseNo\":\"123\",\n\t\"containerType\":\"Shelf\",\n\t\"status\":\"start_using\",\n\t\"cellNumber\":2,\n\t\"layerNumber\":2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/shelves/addShelvesInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"shelves",
+						"addShelvesInfo.do"
+					]
+				},
+				"description": "Shelf 货架\nContainer 货柜"
+			},
+			"response": []
+		},
+		{
+			"name": "查询货架分页数据",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"warehouseId\":1,\n\t\"houseNo\":\"\",\n\t\"shelfNumber\":\"\",\n\t\t  \"start\":1,\n  \"limit\":10000,\n\t\"containerType\":\"Shelf\",\n\t\"status\":\"start_using\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/shelves/getPagerList.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"shelves",
+						"getPagerList.do"
+					]
+				},
+				"description": "Shelf 货架\nContainer 货柜"
+			},
+			"response": []
+		},
+		{
+			"name": "根据Id获取货架信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"goodsShelvesId\":2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/shelves/getShelvesInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"shelves",
+						"getShelvesInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改货架信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"05dfac17756ce7c02dc1d355caed2eb5\",\n\t\"goodsShelvesId\":2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/shelves/deleteShelvesInfo.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"shelves",
+						"deleteShelvesInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据输入内容返回货架信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"warehouseId\":1,\n\t\"searchContent\":\"2 2 2¬\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mi/shelves/getShelvesInfoBySearchContent.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mi",
+						"shelves",
+						"getShelvesInfoBySearchContent.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

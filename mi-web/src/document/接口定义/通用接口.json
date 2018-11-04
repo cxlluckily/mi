@@ -1,0 +1,471 @@
+{
+	"id": "ded2ebb1-4ad0-491d-a49b-2b13e6fc79c9",
+	"name": "通用接口",
+	"description": null,
+	"auth": null,
+	"events": null,
+	"variables": null,
+	"order": [
+		"054ad4a6-b75f-4009-b5fc-104812b39557",
+		"682db7ae-d99d-4eb6-b3c6-3b94d3b9f92b",
+		"25fcf1f9-2b85-432b-ae9a-fc19bffafb86",
+		"80c6bbd1-d7a0-40b4-ae35-47b50798e0bd",
+		"bad25094-dc2e-46cf-8c9d-14c20e330e24",
+		"7a4e3030-7f22-4e89-a346-6f1173795166",
+		"f294f894-18ea-4445-ab25-75b9001ece8e",
+		"76014876-ca9a-4870-821a-9aea6d76dcc2",
+		"2eccf5e1-1465-498a-bc15-6e5690595713",
+		"a0d8a373-5b84-4108-a47d-61662c837b2a",
+		"da966a55-1204-474a-b224-10c7e7695fc6",
+		"8f26a252-c9f5-4f34-9989-ad555266bfa5",
+		"8019f756-5f52-4a88-ab63-c65fbb7b42fd",
+		"62c383e0-8066-40e6-9699-dd28bbcd5124",
+		"d9c22194-ab70-403d-9091-ee5f1d928f2f",
+		"deaeb3c5-caa5-4625-9053-d34f94591baf",
+		"048ffc75-f86e-4010-bea1-018d78c7d7cc",
+		"3a865603-566f-4774-9c60-e7328abdd5ad",
+		"d791bba1-0043-4316-85f2-e8d999cd4cfb"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "048ffc75-f86e-4010-bea1-018d78c7d7cc",
+			"name": "数据范围的仓库列表-按用户查",
+			"url": "http://localhost:8080/mi/data/getWarehousesByUserId.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"warehouse\",\"operationSubjectId\":1, \"range\":\"warehouse\", \"showMode\":\"list\"}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "054ad4a6-b75f-4009-b5fc-104812b39557",
+			"name": "组织机构",
+			"url": "http://localhost:8080/mi/data/loadTree.do",
+			"description": "组织机构",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"organization\",\"operationSubjectId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "25fcf1f9-2b85-432b-ae9a-fc19bffafb86",
+			"name": "线路",
+			"url": "http://localhost:8080/mi/data/load.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"line\", \"operationSubjectId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2eccf5e1-1465-498a-bc15-6e5690595713",
+			"name": "供应商",
+			"url": "http://localhost:8080/mi/data/load.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"supplier\",\"operationSubjectId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "3a865603-566f-4774-9c60-e7328abdd5ad",
+			"name": "上级仓库树",
+			"url": "http://localhost:8080/mi/data/loadUpTree.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"warehouse\",\"operationSubjectId\":1, \"range\":\"warehouse\", \"showMode\":\"tree\", \"entityId\":8}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "62c383e0-8066-40e6-9699-dd28bbcd5124",
+			"name": "数据范围仓库列表",
+			"url": "http://localhost:8080/mi/data/getData.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"warehouse\",\"operationSubjectId\":1, \"range\":\"warehouse\", \"showMode\":\"list\", \"entityId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "682db7ae-d99d-4eb6-b3c6-3b94d3b9f92b",
+			"name": "运营主体列表",
+			"url": "http://localhost:8080/mi/data/load.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"operation_subject\"}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "76014876-ca9a-4870-821a-9aea6d76dcc2",
+			"name": "仓库树",
+			"url": "http://localhost:8080/mi/data/loadTree.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"warehouse\",\"operationSubjectId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "7a4e3030-7f22-4e89-a346-6f1173795166",
+			"name": "工区",
+			"url": "http://localhost:8080/mi/data/load.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"work_section\",\"operationSubjectId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8019f756-5f52-4a88-ab63-c65fbb7b42fd",
+			"name": "仓库树列表",
+			"url": "http://localhost:8080/mi/warehouse/getPagerInfo.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\",\"operationSubjectId\":1,\"status\":\"start_using\"}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "80c6bbd1-d7a0-40b4-ae35-47b50798e0bd",
+			"name": "站点",
+			"url": "http://localhost:8080/mi/data/load.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"station\", \"operationSubjectId\":1, \"entityId\":4}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8f26a252-c9f5-4f34-9989-ad555266bfa5",
+			"name": "数据字典",
+			"url": "http://localhost:8080/mi/data/loadDict.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\",\"code\":\"status\" ,\"name\":\"状\",\"status\":\"supend_using\", \"dataLabel\":\"挂起\"}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "a0d8a373-5b84-4108-a47d-61662c837b2a",
+			"name": "角色",
+			"url": "http://localhost:8080/mi/data/load.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"role\",\"operationSubjectId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "bad25094-dc2e-46cf-8c9d-14c20e330e24",
+			"name": "地区",
+			"url": "http://localhost:8080/mi/data/loadTree.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"region\"}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d791bba1-0043-4316-85f2-e8d999cd4cfb",
+			"name": "上级仓库列表",
+			"url": "http://localhost:8080/mi/data/loadUpTree.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"warehouse\",\"operationSubjectId\":1, \"range\":\"warehouse\", \"showMode\":\"list\", \"entityId\":8}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d9c22194-ab70-403d-9091-ee5f1d928f2f",
+			"name": "数据范围的仓库树",
+			"url": "http://localhost:8080/mi/data/getData.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"warehouse\",\"operationSubjectId\":1, \"range\":\"warehouse\", \"showMode\":\"tree\", \"entityId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "da966a55-1204-474a-b224-10c7e7695fc6",
+			"name": "备件类型",
+			"url": "http://localhost:8080/mi/data/loadTree.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"device_type\",\"operationSubjectId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "deaeb3c5-caa5-4625-9053-d34f94591baf",
+			"name": "数据范围的仓库树-按用户查",
+			"url": "http://localhost:8080/mi/data/getWarehousesByUserId.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"warehouse\",\"operationSubjectId\":1, \"range\":\"warehouse\", \"showMode\":\"tree\"}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "f294f894-18ea-4445-ab25-75b9001ece8e",
+			"name": "仓库列表",
+			"url": "http://localhost:8080/mi/data/load.do",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"userKey\": \"05dfac17756ce7c02dc1d355caed2eb5\", \"type\":\"warehouse\",\"operationSubjectId\":1}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}

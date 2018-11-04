@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "c5b48380-3895-423d-be01-30953403f2ca",
+		"name": "货架",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "根据仓库id查询房间信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n\t\"warehouseId\":\"61\" \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/mi/shelves/getShelvesHouseList.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mi",
+						"shelves",
+						"getShelvesHouseList.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据仓库id和房间号查询货架信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userKey\":\"e2fdcc60d5fc58b3bfced534a6dfc003\",\n\t\"warehouseId\":\"61\",\n\t \"houseNo\": \"123123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/mi/shelves/getShelvesMap.do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"mi",
+						"shelves",
+						"getShelvesMap.do"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

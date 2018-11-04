@@ -1,0 +1,210 @@
+@body-Bgc: #e7f1fb;
+@trademark-Color: #0977c2;
+@button-Bgc: #30a1ee;
+@button-Color: #fff;
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 1366px;
+  overflow: hidden;
+  overflow-x: auto;
+  background-color: @body-Bgc;
+  //background: url('../images/body.png') no-repeat;
+  background-size: 100% 100%;
+  .login {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .login-hidden {
+      display: none;
+    }
+    .login-Mint {
+      position: relative;
+      width: 100%;
+      height: 87%;
+      .Mint-bgc {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-50%);
+        background: url('../images/login_w.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .login-Content {
+        position: absolute;
+        top: 18%;
+        width: 100%;
+        margin: 0 auto;
+        background-size: 100% 100%;
+        .Content-W {
+          margin-top: 80px;
+          width: 100%;
+          height: 116px;
+          padding-left: 18%;
+          font-size: 0;
+          background: url('../images/nav_w.png') no-repeat;
+          background-size: 100% 100%;
+          box-sizing: border-box;
+          .W-left {
+            float: left;
+            margin-right: 50px;
+            .W-dl {
+              margin-top: 50px;
+              margin-right: 32px;
+            }
+            .W-login {
+              margin-top: 32px;
+            }
+          }
+        }
+        .login-Validation {
+          float: left;
+          margin-top: -80px;
+          width: 393px; // height: 388px;
+          height: 312px;
+          padding-top: 84px;
+          background: url('../images/login_bg.png') no-repeat;
+          background-size: 100% 100%;
+          box-sizing: border-box;
+          .from {
+            position: relative;
+            padding: 0 24px;
+            box-sizing: border-box;
+            .name,
+            .pass {
+              display: block;
+              width: 344px;
+              height: 46px;
+              padding-left: 112px;
+              margin-bottom: 10px;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+            .code {
+              padding-right: 134px;
+            }
+            .getCode{
+              position: absolute;
+              box-sizing: border-box;
+              top: 56px;
+              right: 28px;
+              z-index: 10;
+              width: 130px;
+              height: 46px;
+              text-align: center;
+              color: @trademark-Color;
+              line-height: 44px;
+              font-size: 13.3333px;
+              cursor: pointer;
+            }
+            .no-drop{
+              cursor: no-drop;
+              pointer-events: none;
+            }
+            .nameIcon,
+            .passIcon,
+            .verificationCodeIcon {
+              position: absolute;
+              margin-top: 5px;
+              width: 70px;
+              height: 36px;
+              border-right: 1px solid @button-Bgc;
+              cursor: pointer;
+            }
+            .nameIcon {
+              background: url('../images/icon_user.png') no-repeat center;
+            }
+            .passIcon,
+            .verificationCodeIcon {
+              background: url('../images/icon_pwd.png') no-repeat center;
+            }
+            .verificationCode {
+              display: inline-block;
+              width: 254px;
+              height: 46px;
+              border-radius: 4px;
+              padding-left: 112px;
+              box-sizing: border-box;
+            }
+            .img-VerificationCode {
+              float: right;
+              display: inline-block;
+              width: 76px;
+              height: 46px;
+              font-size: 0;
+              text-align: center;
+              line-height: 46px;
+              cursor: pointer;
+              -webkit-user-select: none;
+              span {
+                font-size: 22px;
+                font-weight: 700;
+              }
+            }
+            .isName {
+              display: none;
+            }
+            .isName + .isTrue {
+              background-color: white;
+              border: 1px solid #d3d3d3;
+              width: 16px;
+              height: 16px;
+              display: inline-block;
+              text-align: center;
+              vertical-align: middle;
+              line-height: 16px;
+              margin: 10px 12px 10px 14px;
+              cursor: pointer;
+            }
+            .isName:checked + .isTrue {
+              background-color: #eee;
+              border: 1px solid #000;
+            }
+            .isName:checked + .isTrue:after {
+              content: "√";
+            }
+            .isTrue-Color {
+              color: #419ade;
+              vertical-align: middle;
+            }
+            .submit {
+              //margin: 16px auto; // 新加
+              margin: 16px auto; // 新加
+              display: block; // width: 344px;
+              width: 100%;
+              height: 48px;
+              background-color: @button-Bgc;
+              color: @button-Color;
+              font-size: 16px;
+              text-align: center;
+              line-height: 48px;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+            .other-login {
+              color: #fff;
+              text-align: right;
+              span {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+    .trademark {
+      width: 100%;
+      position: absolute;
+      bottom: 6%;
+      font-size: 24px;
+      text-align: center;
+      color: @trademark-Color;
+    }
+  }
+  /*改变input-placeholder提示字体的颜色*/
+  ::-webkit-input-placeholder {
+    color: @trademark-Color;
+  }
+}
